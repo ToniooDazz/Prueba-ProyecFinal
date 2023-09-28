@@ -4,6 +4,9 @@ const opButtons = document.querySelectorAll(".op-btn");
 const clearButton = document.getElementById("borrar");
 const equalsButton = document.getElementById("igual");
 const historyDiv = document.getElementById("history");
+const limpiarHistorialButton = document.getElementById("limpiarHistorial");
+
+
 
 let currentInput = "0";
 let currentOperator = "";
@@ -14,6 +17,10 @@ let currentExpression = "";
 function addToHistory(operation) {
     historyDiv.innerHTML += `<div>${operation}</div>`;
 }
+
+limpiarHistorialButton.addEventListener("click", () => {
+    historyDiv.innerHTML = "";
+});
 
 // Funciones para guardar resultado
 function updateDisplay() {
